@@ -1,0 +1,51 @@
+/* JIBLI — the brand sheet, on the web. Same tokens as constants/theme.ts. */
+:root{
+  --jib-blue:#2E5FC4; --night:#16336E; --altitude:#9FB6E0; --contrail:#E7EEFB;
+  --orange:#E8651F; --kraft:#8A3B10; --tissue:#FCEDE3;
+  --ink:#221E1A; --pencil:#6E6459; --muted:#9A9084; --string:#E7DFD4; --paper:#FAF6EF;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",sans-serif;
+  background:var(--paper); color:var(--ink); line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+/* The three corner washes, as on every screen in the app. */
+body::before{
+  content:""; position:fixed; inset:0; pointer-events:none; z-index:-1;
+  background:
+    radial-gradient(70% 55% at 10% 0%, rgba(46,95,196,.22), transparent 76%),
+    radial-gradient(60% 50% at 95% 30%, rgba(232,101,31,.15), transparent 76%),
+    radial-gradient(75% 55% at 40% 100%, rgba(159,182,224,.26), transparent 78%);
+}
+.wrap{max-width:720px;margin:0 auto;padding:56px 24px 96px}
+
+/* Wordmark: Baloo 2 is not loaded, so a rounded stack stands in. */
+.brand{display:flex;align-items:flex-end;gap:3px;text-decoration:none;margin-bottom:40px}
+.brand span{
+  font-family:"Baloo 2",ui-rounded,"SF Pro Rounded","Trebuchet MS",sans-serif;
+  font-size:34px;font-weight:700;color:var(--night);letter-spacing:-.7px;line-height:1;
+}
+.brand i{width:7px;height:7px;background:var(--orange);border-radius:2px;
+  transform:rotate(8deg);margin-bottom:3px;display:block}
+
+h1{font-size:34px;line-height:1.15;letter-spacing:-.9px;color:var(--night);font-weight:800}
+.updated{font-size:13px;color:var(--muted);margin-top:10px}
+.intro{font-size:17px;color:var(--pencil);margin-top:22px}
+
+h2{font-size:19px;letter-spacing:-.3px;color:var(--night);font-weight:700;margin-top:38px}
+h2+p{margin-top:9px}
+p{font-size:15.5px;color:var(--ink)}
+a{color:var(--jib-blue);font-weight:600}
+
+.card{
+  background:rgba(255,255,255,.72);border:1px solid rgba(255,255,255,.9);
+  border-radius:24px;padding:26px;margin-top:30px;
+  box-shadow:0 14px 30px -12px rgba(22,51,110,.14);
+}
+.card h2{margin-top:0}
+.card p+h2{margin-top:26px}
+
+footer{margin-top:64px;padding-top:26px;border-top:1px solid var(--string);
+  font-size:13.5px;color:var(--pencil);display:flex;gap:18px;flex-wrap:wrap}
+footer a{color:var(--pencil);font-weight:600}
